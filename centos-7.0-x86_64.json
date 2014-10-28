@@ -5,7 +5,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos-7.0/ks.cfg<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 100000,
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "RedHat_64",
       "http_directory": "http",
@@ -41,7 +41,7 @@
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos-7.0/ks.cfg<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 100000,
       "guest_os_type": "centos-64",
       "http_directory": "http",
       "iso_checksum": "ee505335bcd4943ffc7e6e6e55e5aaa8da09710b6ceecda82a5619342f1d24d9",
@@ -59,7 +59,8 @@
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "memsize": "512",
-        "numvcpus": "1"
+        "numvcpus": "1",
+        "vhv.enable": "TRUE"
       }
     }
   ],
@@ -75,7 +76,8 @@
       "scripts": [
         "scripts/centos/fix-slow-dns.sh",
         "scripts/common/sshd.sh",
-        "scripts/common/install.sh",
+	"scripts/centos/networking.sh",
+        "scripts/centos/install.sh",
 	"scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
         "scripts/centos/cleanup.sh",
