@@ -101,14 +101,15 @@
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "memsize": "2048",
-        "numvcpus": "1"
+        "numvcpus": "1",
+        "vhv.enable": "TRUE"
       }
     }
 
   ],
   "post-processors": [
     {
-      "output": "./ubuntu-14.04.box",
+      "output": "./builds/{{.Provider}}/ubuntu-14.04.box",
       "type": "vagrant"
     }
   ],

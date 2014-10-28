@@ -65,7 +65,7 @@
   ],
   "post-processors": [
     {
-      "output": "./centos-7.0.box",
+      "output": "./builds/{{.Provider}}/centos-7.0.box",
       "type": "vagrant"
     }
   ],
