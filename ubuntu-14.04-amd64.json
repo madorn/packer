@@ -108,7 +108,7 @@
   ],
   "post-processors": [
     {
-      "output": "./builds/{{.Provider}}/ubuntu-14.04.box",
+      "output": "./ubuntu-14.04.box",
       "type": "vagrant"
     }
   ],
