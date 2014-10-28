@@ -6,9 +6,6 @@ apt-get update
 # Upgrade all installed packages incl. kernel and kernel headers
 apt-get -y upgrade linux-server linux-headers-server
 
-# Ensure the correct kernel headers are installed
-#apt-get -y install linux-headers-$(uname -r)
-
 # Update package index on boot
 cat <<EOF > /etc/init/refresh-apt.conf
 description "update package index"
