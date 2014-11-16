@@ -57,7 +57,7 @@
       "type": "vmware-iso",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
-        "memsize": "1024",
+        "memsize": "512",
         "numvcpus": "1",
         "vhv.enable": "TRUE"
       }
