@@ -55,10 +55,9 @@
       "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "linux",
       "type": "vmware-iso",
-      "vm_name": "packer-centos-7.0-x86_64",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
-        "memsize": "512",
+        "memsize": "1024",
         "numvcpus": "1",
         "vhv.enable": "TRUE"
       }
@@ -67,6 +66,7 @@
   "post-processors": [
     {
       "output": "./builds/{{.Provider}}/centos-7.0.box",
+      "vagrantfile_template": "vagrantfile.tpl",
       "type": "vagrant"
     }
   ],
@@ -74,12 +74,12 @@
     {
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "scripts": [
-        "scripts/centos/fix-slow-dns.sh",
         "scripts/common/sshd.sh",
 	"scripts/centos/networking.sh",
         "scripts/centos/install.sh",
-	"scripts/common/vagrant.sh",
+        "scripts/centos/update.sh",
         "scripts/common/vmtools.sh",
+	"scripts/common/vagrant.sh",
         "scripts/centos/cleanup.sh",
         "scripts/common/minimize.sh"
       ],

@@ -110,6 +110,7 @@
   "post-processors": [
     {
       "output": "./builds/{{.Provider}}/ubuntu-14.04.box",
+      "vagrantfile_template": "vagrantfile.tpl",
       "type": "vagrant"
     }
   ],

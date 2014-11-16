@@ -4,7 +4,7 @@
 apt-get update
 
 # Upgrade all installed packages incl. kernel and kernel headers
-apt-get -y upgrade linux-server linux-headers-server
+aptitude -y install linux-image-3.13.0-36-generic linux-headers-3.13.0-36-generic
 
 # Update package index on boot
 cat <<EOF > /etc/init/refresh-apt.conf
